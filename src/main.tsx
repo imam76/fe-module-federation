@@ -1,16 +1,13 @@
+import { MantineProvider } from '@mantine/core';
+import '@mantine/core/styles.css';
 import { createRouter } from "@tanstack/react-router";
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.tsx";
+import './common/i18n';
 import { routeTree } from "./routeTree.gen.ts";
 import "./styles/tailwind.css";
-import './common/i18n'
-import '@mantine/core/styles.css';
-import { createTheme, MantineProvider } from '@mantine/core';
-
-const theme = createTheme({
-	/** Put your mantine theme override here */
-});
+import theme from "./styles/theme.ts";
 
 const router = createRouter({ routeTree });
 
