@@ -1,11 +1,12 @@
 import lazyWithSuspenseWrapper from "@components/utils/lazyWithSuspenseWrapper";
-import { RouteObject } from "react-router";
+import withProtectedRoute, { ProtectedRouteObject } from "@components/utils/withProtectedRoute";
 
-const datastore: RouteObject[] = [
+const datastore: ProtectedRouteObject[] = [
   {
     path: '/datastore',
-    element: lazyWithSuspenseWrapper(() => import("@pages/Home"))
+    element: lazyWithSuspenseWrapper(() => import("@pages/datastore/Datastore")),
+    protected: true,
   }
 ];
 
-export default datastore;
+export default withProtectedRoute(datastore);

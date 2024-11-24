@@ -12,7 +12,6 @@ const CONTAINER_SIZES: Record<string, string> = {
 
 const theme = createTheme({
   /** Put your mantine theme override here */
-  fontFamily: "Host Grotesk, sans-serif",
   fontSizes: {
     xs: rem("12px"),
     sm: rem("14px"),

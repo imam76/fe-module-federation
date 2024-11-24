@@ -1,11 +1,9 @@
-import { MantineProvider } from '@mantine/core';
-import '@mantine/core/styles.css';
+import ZhrUiProvider from '@components/utils/ZhrUiProvider.tsx';
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.tsx";
 import './common/i18n';
 import "./styles/tailwind.css";
-import theme from "./styles/theme.ts";
 
 const rootElement = document.querySelector("#root") as Element;
 if (!rootElement.innerHTML) {
@@ -13,10 +11,10 @@ if (!rootElement.innerHTML) {
 	root.render(
 		<React.StrictMode>
 			<React.Suspense fallback="loading">
-				<MantineProvider theme={theme}>
+				<ZhrUiProvider>
 					<App />
-				</MantineProvider>
+				</ZhrUiProvider>
 			</React.Suspense>
-		</React.StrictMode>
+		</React.StrictMode >
 	);
 }

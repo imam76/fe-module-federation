@@ -22,15 +22,18 @@ export default defineConfig({
 			filename: 'remoteEntry.js',
 			exposes: {
 				'./Contact': './src/modules/Contacts/Contacts.tsx',
+				'./Datastore': './src/pages/Datastore/Datastore.tsx',
+				'./ZhrUiProvider': './src/components/utils/ZhrUiProvider.tsx'
 			},
-			shared: ['react', 'react-dom'],
-		}),
+			shared: ['react', 'react-dom', '@mantine/core'],
+		},
+		),
 	],
 	resolve: {
 		alias: {
 			'@common': path.resolve(__dirname, 'src/common'),
 			'@components': path.resolve(__dirname, 'src/components'),
-			'@hook': path.resolve(__dirname, 'src/hook'),
+			'@hooks': path.resolve(__dirname, 'src/hooks'),
 			'@lib': path.resolve(__dirname, 'src/lib'),
 			'@modules': path.resolve(__dirname, 'src/modules'),
 			'@pages': path.resolve(__dirname, 'src/pages'),

@@ -6,6 +6,10 @@ import lazyWithSuspenseWrapper from "@components/utils/lazyWithSuspenseWrapper";
 const routes = createBrowserRouter([
 	...datastore,
 	{
+		path: '/login',
+		element: lazyWithSuspenseWrapper(() => import("@pages/login/Login")),
+	},
+	{
 		path: '*', // Menangkap semua route yang tidak cocok
 		element: lazyWithSuspenseWrapper(() => import("@pages/PageNotFound")),
 	},

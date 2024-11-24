@@ -8,8 +8,8 @@
 			"@components/*": [
 				"components/*"
 			],
-			"@hook/*": [
-				"hook/*"
+			"@hooks/*": [
+				"hooks/*"
 			],
 			"@lib/*": [
 				"lib/*"

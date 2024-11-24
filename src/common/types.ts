@@ -1,3 +1,5 @@
+import { ReactNode } from "react";
+
 export type FunctionComponent = React.ReactElement | null;
 
 type HeroIconSVGProps = React.PropsWithoutRef<React.SVGProps<SVGSVGElement>> &
@@ -12,4 +14,8 @@ export interface AuthContextType {
 	isAuthenticated: boolean;
 	login: () => void;
 	logout: () => void;
+}
+
+export interface AuthProviderProps {
+	children: ReactNode;
 }
