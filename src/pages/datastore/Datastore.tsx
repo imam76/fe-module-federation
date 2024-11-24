@@ -1,4 +1,4 @@
-import MenuGrid from "@components/ui/MenuGrid";
+import MenuGrid from "@components/ui/MenuGrid/MenuGrid";
 import { Container } from "@mantine/core";
 import { Building2, ClipboardList, Package } from "lucide-react";
 import { useTranslation } from "react-i18next";

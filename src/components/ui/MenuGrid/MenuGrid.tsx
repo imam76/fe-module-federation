@@ -1,7 +1,7 @@
 import { Container, SimpleGrid } from '@mantine/core';
 import { LucideIcon } from 'lucide-react';
 import React from 'react';
-import MenuItem from './MenuItem';
+import MenuItem from '../MenuItem/MenuItem';
 
 interface MenuItemData {
   title: string;
