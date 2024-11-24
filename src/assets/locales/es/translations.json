@@ -1,5 +1,4 @@
 {
-    "home": {
-        "greeting": "¡Hola, Mundo!"
-    }
+    "welcome": "Bienvenido",
+    "greeting": "Hola, ¿cómo estás?"
 }

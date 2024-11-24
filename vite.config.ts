@@ -1,4 +1,3 @@
-import { TanStackRouterVite } from "@tanstack/router-plugin/vite"
 import react from "@vitejs/plugin-react-swc";
 import path from "node:path";
 import { normalizePath } from "vite";
@@ -10,7 +9,6 @@ import federation from '@originjs/vite-plugin-federation';
 export default defineConfig({
 	plugins: [
 		react(),
-		TanStackRouterVite(),
 		viteStaticCopy({
 			targets: [
 				{
@@ -28,6 +26,17 @@ export default defineConfig({
 			shared: ['react', 'react-dom'],
 		}),
 	],
+	resolve: {
+		alias: {
+			'@common': path.resolve(__dirname, 'src/common'),
+			'@components': path.resolve(__dirname, 'src/components'),
+			'@hook': path.resolve(__dirname, 'src/hook'),
+			'@lib': path.resolve(__dirname, 'src/lib'),
+			'@modules': path.resolve(__dirname, 'src/modules'),
+			'@pages': path.resolve(__dirname, 'src/pages'),
+			'@store': path.resolve(__dirname, 'src/store')
+		}
+	},
 	server: {
 		host: true,
 		strictPort: true,

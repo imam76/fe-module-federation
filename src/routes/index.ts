@@ -1,6 +1,14 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { Home } from "../pages/Home";
+import { createBrowserRouter } from "react-router";
+import datastore from "./datastore/datastore";
 
-export const Route = createFileRoute("/")({
-	component: Home,
-});
+import lazyWithSuspenseWrapper from "@components/utils/lazyWithSuspenseWrapper";
+
+const routes = createBrowserRouter([
+	...datastore,
+	{
+		path: '*', // Menangkap semua route yang tidak cocok
+		element: lazyWithSuspenseWrapper(() => import("@pages/PageNotFound")),
+	},
+]);
+
+export default routes;

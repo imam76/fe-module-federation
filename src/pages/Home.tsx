@@ -1,8 +1,6 @@
-import { Link } from "@tanstack/react-router";
 import { useTranslation } from "react-i18next";
-import type { FunctionComponent } from "../common/types";
 
-export const Home = (): FunctionComponent => {
+const Home = () => {
 	const { t, i18n } = useTranslation();
 
 	const onTranslateButtonClick = async (): Promise<void> => {
@@ -15,14 +13,6 @@ export const Home = (): FunctionComponent => {
 
 	return (
 		<>
-			<div className="p-2 flex gap-2">
-				<Link to="/">
-					Home
-				</Link>{' '}
-				<Link to="/auth">
-					About
-				</Link>
-			</div>
 			<p className="text-red-800 text-6xl">{t("home.greeting")}</p>
 			<button type="submit" onClick={onTranslateButtonClick}>
 				translate
@@ -30,3 +20,5 @@ export const Home = (): FunctionComponent => {
 		</>
 	);
 };
+
+export default Home;
