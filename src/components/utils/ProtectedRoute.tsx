@@ -1,4 +1,5 @@
 
+import MainLayout from "@components/layout/MainLayout";
 import useAuthStore from "@store/authStore";
 import { ReactNode } from "react";
 import { Navigate } from "react-router";
@@ -12,7 +13,11 @@ const ProtectedRoute = ({ children }: ProtectedRouteProps) => {
 
   // Jika user belum login, arahkan ke halaman login
   return isAuthenticated ? (
-    <>{children}</> // Akses halaman yang dilindungi
+    <>
+      <MainLayout>
+        {children}
+      </MainLayout>
+    </> // Akses halaman yang dilindungi
   ) : (
     <Navigate to="/login" /> // Arahkan ke login jika belum autentikasi
   );

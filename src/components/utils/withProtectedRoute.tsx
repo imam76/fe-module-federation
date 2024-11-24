@@ -10,7 +10,7 @@ export default function withProtectedRoute(routes: ProtectedRouteObject[]): Rout
     if (route.protected) {
       return {
         ...route,
-        element: <ProtectedRoute>{route.element} </ProtectedRoute>,
+        element: <ProtectedRoute>{route.element}</ProtectedRoute>,
       }
     }
     return route;
