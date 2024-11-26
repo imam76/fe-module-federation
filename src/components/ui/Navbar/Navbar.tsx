@@ -27,6 +27,7 @@ import {
   AlertCircle as IconNotification,
 } from 'lucide-react';
 import classes from './Navbar.module.css';
+import { Link } from 'react-router';
 
 
 const mockdata = [
@@ -86,14 +87,17 @@ export function Navbar() {
   ));
 
   return (
-    <Box pb={120}>
+    <Box>
       <header className={classes.header}>
         <Group justify="space-between" h="100%">
 
           <Group h="100%" gap={0} visibleFrom="sm">
-            <a href="#" className={classes.link}>
-              Home
-            </a>
+            <Link to={'/'} className={classes.link}>
+              Dashboard
+            </Link>
+            <Link to={'/datastore'} className={classes.link}>
+              Datastore
+            </Link>
             <HoverCard width={600} position="bottom" radius="md" shadow="md" withinPortal>
               <HoverCard.Target>
                 <a href="#" className={classes.link}>
@@ -135,9 +139,6 @@ export function Navbar() {
                 </div>
               </HoverCard.Dropdown>
             </HoverCard>
-            <a href="#" className={classes.link}>
-              Learn
-            </a>
             <a href="#" className={classes.link}>
               Academy
             </a>
