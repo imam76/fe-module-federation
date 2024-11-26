@@ -23,7 +23,7 @@ const Login = () => {
 
   const handleLogin = () => {
     login(); // Menandakan bahwa user sudah login
-    navigate('/datastore'); // Redirect ke halaman yang dilindungi setelah login
+    navigate('/'); // Redirect ke halaman yang dilindungi setelah login
   };
 
   return (
@@ -53,38 +53,36 @@ const Login = () => {
               Login dengan Akun Zahir
             </Text>
 
-            <form onSubmit={() => console.log('submit')}>
-              <Stack>
-                <TextInput
-                  required
-                  label="Email"
-                  placeholder="zahirqateam@gmail.com"
-                  onChange={(event) => console.log(event.currentTarget.value)}
-                  // error={form.errors.email}
-                  radius="md"
-                  leftSection={<Mail size={16} />}
-                />
+            <Stack>
+              <TextInput
+                required
+                label="Email"
+                placeholder="zahirqateam@gmail.com"
+                onChange={(event) => console.log(event.currentTarget.value)}
+                // error={form.errors.email}
+                radius="md"
+                leftSection={<Mail size={16} />}
+              />
 
-                <PasswordInput
-                  required
-                  label="Password"
-                  placeholder="Your password"
-                  onChange={(event) => console.log(event.currentTarget.value)}
-                  // error={form.errors.password}
-                  radius="md"
-                />
+              <PasswordInput
+                required
+                label="Password"
+                placeholder="Your password"
+                onChange={(event) => console.log(event.currentTarget.value)}
+                // error={form.errors.password}
+                radius="md"
+              />
 
-                <Button
-                  type="submit"
-                  radius="md"
-                  fullWidth
-                  style={{ backgroundColor: '#22c55e' }}
-                  onClick={handleLogin}
-                >
-                  Login
-                </Button>
-              </Stack>
-            </form>
+              <Button
+                type="submit"
+                radius="md"
+                fullWidth
+                style={{ backgroundColor: '#22c55e' }}
+                onClick={handleLogin}
+              >
+                Login
+              </Button>
+            </Stack>
 
             <Divider label="atau lanjutkan dengan" labelPosition="center" my="lg" />
 
