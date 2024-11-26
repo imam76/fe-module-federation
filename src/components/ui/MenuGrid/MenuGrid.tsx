@@ -17,7 +17,6 @@ interface MenuGridProps {
 const MenuGrid: React.FC<MenuGridProps> = ({ items }) => {
   return (
     <Container size="xl">
-      {/* <Title order={2} mb="xl">Data Master</Title> */}
       <SimpleGrid cols={{ base: 1, sm: 2, lg: 4 }} spacing="lg">
         {items.map((item, index) => (
           <MenuItem key={index} {...item} />
