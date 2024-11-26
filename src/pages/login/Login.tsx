@@ -1,9 +1,11 @@
+import IconZahir from '@components/icon/Zahir';
 import {
   Anchor,
   Button,
   Container,
   Divider,
   Group,
+  Menu,
   Paper,
   PasswordInput,
   rem,
@@ -13,12 +15,14 @@ import {
   Title,
 } from '@mantine/core';
 import useAuthStore from '@store/authStore';
-import { Mail } from 'lucide-react';
+import { ChevronDown, Mail } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router';
 
 const Login = () => {
   const { login } = useAuthStore();
   const navigate = useNavigate();
+  const { t, i18n } = useTranslation();
 
 
   const handleLogin = () => {
@@ -37,16 +41,12 @@ const Login = () => {
       }}>
         <Container size={420} my={40}>
           <Paper radius="md" p="xl" withBorder>
-            <Group justify="center" mb="lg">
-              <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-                <circle cx="16" cy="16" r="16" fill="#0EA5E9" />
-                <text x="50%" y="50%" dominantBaseline="middle" textAnchor="middle" fill="white" fontSize="20">Z</text>
-              </svg>
-              <Text size="xl" fw={500} c="dimmed">Online</Text>
+            <Group justify="left" mb="lg">
+              <IconZahir />
             </Group>
 
-            <Title order={2} ta="center" mt="md" mb={8}>
-              Login
+            <Title order={2} ta="center" mt="md" mb={8} c="#394D6F">
+              {t('Login')}
             </Title>
 
             <Text c="dimmed" size="sm" ta="center" mb="xl">
@@ -58,7 +58,7 @@ const Login = () => {
                 <TextInput
                   required
                   label="Email"
-                  placeholder="zahirqateam@gmail.com"
+                  placeholder="Email"
                   onChange={(event) => console.log(event.currentTarget.value)}
                   // error={form.errors.email}
                   radius="md"
