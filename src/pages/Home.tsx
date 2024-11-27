@@ -4,6 +4,7 @@ import { DashboardCard } from "@components/ui/DashboardCard/DashboardCard";
 import { GoalsProgress } from "@components/ui/GoalsProgress/GoalsProgress";
 import { MetricCard } from "@components/ui/MetrixCard/MetrixCard";
 import { TransactionList } from "@components/ui/TransactionList/TransactionList";
+import { ActionIcon, Container, Title } from "@mantine/core";
 import { DollarSign, Moon, Sun, TrendingDown, TrendingUp, Wallet } from "lucide-react";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -28,16 +29,17 @@ const Home = () => {
 	return (
 		<>
 			<div className={`min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors duration-200`}>
-				<div className="container mx-auto px-4 py-8">
+				<div className="container mx-auto px-4 py-8"></div>
+				<Container size={'xxl'} >
+
 					{/* Header */}
 					<div className="flex justify-between items-center mb-8">
-						<h1 className="text-2xl font-bold text-gray-900 dark:text-white">Financial Dashboard</h1>
-						<button
+						<Title>Financial Dashboard</Title>
+						<ActionIcon
 							onClick={toggleDarkMode}
-							className="p-2 rounded-lg bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-white"
 						>
 							{isDarkMode ? <Sun size={20} /> : <Moon size={20} />}
-						</button>
+						</ActionIcon>
 					</div>
 
 					{/* Key Metrics */}
@@ -93,7 +95,8 @@ const Home = () => {
 							<GoalsProgress />
 						</DashboardCard>
 					</div>
-				</div>
+
+				</Container>
 			</div>
 			<p className="text-red-800 text-6xl">{t("home.greeting")}</p>
 			<button type="submit" onClick={onTranslateButtonClick}>
