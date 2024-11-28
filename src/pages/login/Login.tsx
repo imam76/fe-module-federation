@@ -15,7 +15,6 @@ import {
   Title,
 } from '@mantine/core';
 import useAuthStore from '@store/authStore';
-import { ChevronDown, Mail } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router';
 
@@ -40,7 +39,7 @@ const Login = () => {
         justifyContent: 'center'
       }}>
         <Container size={420} my={40}>
-          <Paper radius="md" p="xl" withBorder>
+          <Paper style={{ width: '500px', height: '680px', top: '400px', left: '50%', position: 'absolute', transform: 'translate(-50%, -50%)' }} radius="md" p="xl" withBorder >
             <Group justify="left" mb="lg">
               <IconZahir />
             </Group>
@@ -57,26 +56,23 @@ const Login = () => {
               <Stack>
                 <TextInput
                   required
-                  label="Email"
                   placeholder="Email"
                   onChange={(event) => console.log(event.currentTarget.value)}
                   // error={form.errors.email}
-                  radius="md"
-                  leftSection={<Mail size={16} />}
+                  radius="4px"
                 />
 
                 <PasswordInput
                   required
-                  label="Password"
-                  placeholder="Your password"
+                  placeholder="Password"
                   onChange={(event) => console.log(event.currentTarget.value)}
                   // error={form.errors.password}
-                  radius="md"
+                  radius="4px"
                 />
 
                 <Button
                   type="submit"
-                  radius="md"
+                  radius="4px"
                   fullWidth
                   style={{ backgroundColor: '#22c55e' }}
                   onClick={handleLogin}
@@ -90,15 +86,16 @@ const Login = () => {
 
             <Group grow mb="md" mt="md">
               <Button
+              c="#5D6D89"
                 variant="default"
-                radius="md"
+                radius="4px"
+                style={{ backgroundColor: '#FFFFFF' }}
                 leftSection={
-                  <svg width={rem(20)} height={rem(20)} viewBox="0 0 24 24">
-                    <path
-                      fill="currentColor"
-                      d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5.36 14.3c-.28.48-.71.86-1.21 1.11-.5.25-1.07.38-1.63.38-.56 0-1.13-.13-1.63-.38-.5-.25-.93-.63-1.21-1.11-.28-.48-.43-1.02-.43-1.57 0-.55.15-1.09.43-1.57.28-.48.71-.86 1.21-1.11.5-.25 1.07-.38 1.63-.38.56 0 1.13.13 1.63.38.5.25.93.63 1.21 1.11.28.48.43 1.02.43 1.57 0 .55-.15 1.09-.43 1.57zM12 19c-3.87 0-7-3.13-7-7s3.13-7 7-7 7 3.13 7 7-3.13 7-7 7z"
-                    />
-                  </svg>
+                  <img
+                    src="https://w7.pngwing.com/pngs/229/438/png-transparent-google-logo-adsense-google-adwords-history-company-text-logo-thumbnail.png"
+                    width={20}
+                    height={20}
+                  />
                 }
               >
                 Login Dengan Google
@@ -106,7 +103,7 @@ const Login = () => {
             </Group>
 
             <Group justify="center" mt="md">
-              <Text size="sm">
+              <Text size="sm" c="#5D6D89">
                 Tidak punya akun?{' '}
                 <Anchor size="sm" component="button" c="#0EA5E9">
                   Daftar
