@@ -1,44 +1,30 @@
+import { mantineTheme } from './src/styles/theme.ts';
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   corePlugins: { preflight: false, },
   theme: {
-    extend: {},
-    spacing: {
-      sm: 'var(--mantine-spacing-sm)',
-      md: 'var(--mantine-spacing-md)',
-      lg: 'var(--mantine-spacing-lg)',
-      xl: 'var(--mantine-spacing-xl)',
+    fontFamily: {
+      'display': [mantineTheme.fontFamily],
+      'body': [mantineTheme.fontFamily],
     },
-    colors: {
-      primary: 'var(--mantine-color-primary)',
-      secondary: 'var(--mantine-color-secondary)',
-      // Tambahkan lebih banyak warna sesuai tema Mantine
-    },
-    fontSize: {
-      sm: 'var(--mantine-font-size-sm)',
-      md: 'var(--mantine-font-size-md)',
-      lg: 'var(--mantine-font-size-lg)',
-      xl: 'var(--mantine-font-size-xl)',
-    },
-    borderRadius: {
-      sm: 'var(--mantine-radius-sm)',
-      md: 'var(--mantine-radius-md)',
-      lg: 'var(--mantine-radius-lg)',
-    },
-    boxShadow: {
-      sm: 'var(--mantine-shadow-sm)',
-      md: 'var(--mantine-shadow-md)',
-      lg: 'var(--mantine-shadow-lg)',
-    },
-    lineHeight: {
-      sm: 'var(--mantine-line-height-sm)',
-      md: 'var(--mantine-line-height-md)',
-      lg: 'var(--mantine-line-height-lg)',
-    },
-    zIndex: {
-      dropdown: 'var(--mantine-z-index-dropdown)',
-      modal: 'var(--mantine-z-index-modal)',
+    extend: {
+      colors: {
+        primary: mantineTheme.colors.primary[5],  // Mengambil warna utama (gunakan indeks sesuai kebutuhan)
+        secondary: mantineTheme.colors.secondary[5],
+      },
+      spacing: {
+        sm: mantineTheme.spacing.sm,
+        md: mantineTheme.spacing.md,
+        lg: mantineTheme.spacing.lg,
+        xl: mantineTheme.spacing.xl,
+      },
+      borderRadius: {
+        sm: mantineTheme.radius.sm,
+        md: mantineTheme.radius.md,
+        lg: mantineTheme.radius.lg,
+      },
     },
   },
   plugins: [],

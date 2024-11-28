@@ -26,7 +26,7 @@ const Login = () => {
 
   const handleLogin = () => {
     login(); // Menandakan bahwa user sudah login
-    navigate('/datastore'); // Redirect ke halaman yang dilindungi setelah login
+    navigate('/'); // Redirect ke halaman yang dilindungi setelah login
   };
 
   return (

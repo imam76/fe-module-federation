@@ -1,3 +1,25 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  :root {
+    @apply antialiased;
+  }
+  
+  body {
+    @apply m-0;
+  }
+}
+
+.recharts-default-tooltip {
+  @apply bg-white dark:bg-gray-800 border-none shadow-lg !important;
+}
+
+.recharts-tooltip-label {
+  @apply text-gray-700 dark:text-gray-300 !important;
+}
+
+.recharts-tooltip-item {
+  @apply text-gray-600 dark:text-gray-400 !important;
+}
